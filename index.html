@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content= "width=device-width
+initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>NekoTouch</title>
+
+<style>
+
+#ON{
+		width:50px; 
+		height: 50px; 
+		background: url(img/ON.png);
+                background-size: contain; 
+                left: 300px;
+                top: -300px;
+                position:absolute;
+                background-repeat: no-repeat;
+		z-index:1
+		}
+
+#OFF{
+                width:50px; 
+		height: 50px; 
+		background: url(img/OFF.png);
+                background-size: contain; 
+                left: 300px;
+                top: -300px;
+                position:absolute;
+                background-repeat: no-repeat;
+		z-index:1
+}
+	
+body{
+margin: 0px;
+background: url(img/gato.png);
+background-size: 100% 100vh;
+background-repeat: no-repeat;
+overflow:hidden;
+	}
+
+a{width: 50%;height: 12vh; display: block;
+margin-left: auto;margin-right: auto;margisssn-bottom: 4vh}
+div{margin-top:50vh;}
+
+</style>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+        <script>
+               $(document).ready(function(){	
+                var status = 0;
+                        $("#ost").trigger("play");	
+			
+                        $("#ON").click(function(){
+				if(status == 0){
+					$("#ON").hide();
+					$("#OFF").show();
+					status = 1;
+				}
+				else
+				{
+					$("#ON").show();
+					$("#OFF").hide();
+					status = 0;
+				}
+			})	
+                })
+	</script>
+<body>
+
+<div>
+<a href="jogar.html"></a>
+<a href="pontuacao.html"></a>
+<a href="compartilhar.html"></a>
+<div id="ON"> </div>
+<div id="OFF"> </div>
+<audio src="sons/bloom.mp3" loop id="ost"></audio>
+
+</body>
+
+</html>
